@@ -3,12 +3,9 @@ var Schema = mongoose.Schema;
 
 var AthleteSchema = new Schema({
 	name: String,
-	isInOthersSports: Boolean,
+	isInOthersSports: Boolean, // not sure if i need this
 	isInATeam: Boolean,
-	// sport: {
-	// 	type: Schema.Types.ObjectId,
-	// 	ref: 'Sport'
-	// }
+	sport: String
 });
 
 var Athlete = mongoose.model('Athlete', AthleteSchema);

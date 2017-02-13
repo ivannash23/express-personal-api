@@ -12,6 +12,7 @@
 
     <!-- VENDOR SCRIPTS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js"></script>
@@ -19,11 +20,33 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h1>Under Construction</h1>
-          <h4><a href="/api">Read My API Documentation</a></h4>
+        <div class="col-md-12">
+          <h1 class="text-center">Athletes From WDI-35</h1>
         </div>
       </div>
+    <div class="col-md-4 thumbnail" id="athletes"></div>
+    <div class="col-md-4 thumbnail" id="teams"></div>
+    <div class="col-md-4 thumbnail">
+      <div class="col-md-12">
+        <form id="newAthleteForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="athlete's name" required>
+          </div>
+          <div class="form-group">
+            <label for="sport">Sport</label>
+            <select required>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="athlete's name" required>
+          </div>
+        </form>
+      </div>
+    </div>
     </div>
   </body>
 </html>
