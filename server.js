@@ -1,10 +1,11 @@
 // require express and other modules
 var express = require('express'),
-    app = express();
+  bodyParser = require('body-parser'),
+  mongoose = require('mongoose'),
+  app = express();
 
 // parse incoming urlencoded form data
 // and populate the req.body object
-var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // allow cross origin requests (optional)
@@ -19,7 +20,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// var db = require('./models');
+var db = require('./models');
 
 /**********
  * ROUTES *
@@ -42,21 +43,37 @@ app.get('/', function homepage(req, res) {
  * JSON API Endpoints
  */
 
-app.get('/api', function apiIndex(req, res) {
-  // TODO: Document all your api endpoints below as a simple hardcoded JSON object.
-  // It would be seriously overkill to save any of this to your database.
-  res.json({
-    woopsIForgotToDocumentAllMyEndpoints: true, // CHANGE ME ;)
-    message: "Welcome to my personal api! Here's what you need to know!",
-    documentationUrl: "https://github.com/example-username/express_self_api/README.md", // CHANGE ME
-    baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
-    endpoints: [
-      {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
-    ]
-  })
+app.get('/api/sports', function(req, res) {
+  
+  //get all the sports
+  db.Sport.find({}, function(err, esportes){ // BUG .find is not a function BUG
+      if (err) { return console.log("index error: " + err); }
+      res.json(esportes);
+    });
+
 });
+
+app.get('/api/athletes', function(req, res){
+
+  // get all the teams
+  db.Team.find({}, function(err, time){
+      if (err) { return console.log("index error: " + err); }
+      res.json(time);
+    });
+  
+});
+
+app.get('/api/teams', function(req, res){
+
+  // get all the athletes
+  db.Athlete.find({}, function(err, atletas){
+      if (err) { return console.log("index error: " + err); }
+      res.json(atletas);
+    });
+
+});
+
+
 
 /**********
  * SERVER *
