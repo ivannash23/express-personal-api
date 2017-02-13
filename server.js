@@ -22,6 +22,149 @@ app.use(function(req, res, next) {
 
 var db = require('./models');
 
+var new_athletes = [
+{
+_id: "58a114c0e4af0007a8404538",
+__v: 0,
+sport: "soccer, capoeira, basketball, jiu-jitsu",
+isInOthersSports: true,
+name: "Ivan M.",
+isInATeam: false
+},
+{
+_id: "58a116b6a7c48e07e8f2eae2",
+name: "Anton P.",
+isInOthersSports: false,
+sport: "soccer",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13cf0f10ba90bdea0ae1d",
+name: "Brett M.",
+sport: "soccer",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13d98c7db610bf8e6d2ae",
+name: "Chris P.",
+sport: "Water Polo, baseball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13dcdc7db610bf8e6d2af",
+name: "Christen W.",
+sport: "Dodge Ball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13de4c7db610bf8e6d2b0",
+name: "Kevin K.",
+sport: "football",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13e1fc7db610bf8e6d2b1",
+name: "Kody L.",
+sport: "soccer, baseball, basketball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13e39c7db610bf8e6d2b2",
+name: "Logan M.",
+sport: "Rock Climbing",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13e96c7db610bf8e6d2b3",
+name: "Michelle F.",
+sport: "soccer, rock climbing, soccer",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f0cc7db610bf8e6d2b4",
+name: "Nathan A.",
+sport: "cheese rolling, zoorb",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f35c7db610bf8e6d2b5",
+name: "Regelyn C.",
+sport: "Taekwondo",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f4fc7db610bf8e6d2b6",
+name: "Sherri A.",
+sport: "Volleyball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f67c7db610bf8e6d2b7",
+name: "Thelma B.",
+sport: "Kickball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f7cc7db610bf8e6d2b8",
+name: "Timothy S.",
+sport: "baseball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13f92c7db610bf8e6d2b9",
+name: "Weston D.",
+sport: "soccer",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13fb8c7db610bf8e6d2ba",
+name: "Yan-Yin C.",
+sport: "Kung-fu",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a13fe1c7db610bf8e6d2bb",
+name: "Yvonne T.",
+sport: "volleyball",
+__v: 0,
+isInATeam: false
+},
+{
+_id: "58a1ec06bb12ed0eff9ca836",
+name: "Joe Schmoe",
+sport: "Badmitton",
+__v: 0,
+isInATeam: false
+}
+];
+
+var new_teams = [
+{
+_id: "58a16336bb12ed0eff9ca835",
+name: "WDI-35",
+sport: "soccer",
+color1: "Black",
+color2: "White",
+__v: 0,
+athlete: [ ]
+}
+]
+
 /**********
  * ROUTES *
  **********/

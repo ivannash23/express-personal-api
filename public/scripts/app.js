@@ -33,18 +33,22 @@ $('#newTeamForm').on('submit', function(e) {
     });
   });
 
+//delete button not working, unsure why, it works on the console.
+
 $('.btn-team').on('click', function(e){
+	console.log("anything");
 	$.ajax({
 		method:'DELETE',
-		url:'/api/teams/' + $(this).attr('id'),
+		url:`'/api/teams/${$(this).attr('id')}`,
 		success: onSuccessDeleteTeam
 	});
 });
 
-$('.btn-athlete').on('click', function(e){
+$('.btn-danger').on('click', function(e){
+	console.log($(this).attr('id').serialize())
 	$.ajax({
 		method:'DELETE',
-		url:'/api/athletes/' + $(this).attr('id'),
+		url:'/api/athletes/' + $(this).attr('id').serialize(),
 		success: onSuccessDeleteAthlete
 	});
 });
