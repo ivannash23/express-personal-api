@@ -3,8 +3,10 @@ var Schema = mongoose.Schema;
 
 var AthleteSchema = new Schema({
 	name: String,
-	isInOthersSports: Boolean, // not sure if i need this
-	isInATeam: Boolean,
+	isInATeam: {
+		type: Boolean,
+		default: false
+	},
 	sport: String
 });
 
